@@ -1,0 +1,47 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+
+  <div class="col-md-3 sidebar sticky">
+    
+    <div class="prof_margin">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image, class:"prof_image"%>
+      <% else%>
+        <%= image_tag "default.png", class:"prof_default"%>
+      <% end%>      
+    </div>
+    
+    <div class="b">
+      <p class="name"><%= @user.name%></p>
+      <p><%= render 'shared/stats' %></p>
+    </div>
+    
+    <%= render 'follow_form' if logged_in? %>
+
+    <div class="b">
+      <%= link_to "戻る", :back, class:"home btn--white btn--radius"%>
+    </div>
+    
+    <div class="b">
+      <%= link_to "ホーム", '/static_pages/mypage', class:"home btn--white btn--radius" %>
+    </div>
+
+
+  </div>
+  
+  <div class="col-md-7">
+    
+    <% if @user.microposts.any? %>
+      <h3><%= @user.microposts.count %>件の投稿</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+
+  <div class="col-md-2 right-sidebar sticky">
+ 
+  </div>
+  
+</div>

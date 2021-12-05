@@ -1,0 +1,54 @@
+
+<title>Edit user</title>
+
+<div class="row">
+  <div class="col-md-3 sidebar sticky">
+    <div class="b">
+      <%= link_to "戻る" , static_pages_mypage_path , class: 'home btn--white btn--radius'%>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <h1>ユーザー情報</h1>
+    <% if @user.image.attached? %>
+      <%= image_tag @user.image, class:"prof_image"%>
+    <% else %>
+      <%= image_tag "default.png", class:"prof_default"%>
+    <% end %>
+    
+    <%= form_with(model: @user, local: true) do |f| %>
+      <div class="form_size">
+        <span class="image pad">
+          <%= f.label :image, "アイコン画像"%>
+          <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+        </span>
+      
+        <%= f.label :name,"名前" %>
+        <%= f.text_field :name, class: 'form-control' %>
+  
+        <%= f.label :email,"メールアドレス" %>
+        <%= f.email_field :email, class: 'form-control' %>
+  
+        <%= f.label :password,"パスワード" %>
+        <%= f.password_field :password, class: 'form-control' %>
+  
+        <%= f.label :password_confirmation, "パスワードを確認" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        
+        <%= f.submit "変更を保存", class: "btn btn-primary" %>       
+      </div>
+    <% end %>
+ 
+    <script type="text/javascript">
+      $("#micropost_image").bind("change", function() {
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          alert("Maximum file size is 5MB. Please choose a smaller file.");
+          $("#micropost_image").val("");
+        }
+      });
+    </script>
+  </div>
+  <div class="col-md-2 right-sidebar sticky">
+  </div>
+  
+</div>

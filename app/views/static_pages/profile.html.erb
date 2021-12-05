@@ -1,0 +1,60 @@
+<% provide(:title, current_user.name )%>
+
+<div class="row">
+  <div class="col-md-3 sidebar sticky">
+
+    <div class="prof_margin">
+      <% if current_user.image.attached? %>
+        <%= image_tag current_user.image, class:"prof_image"%>
+      <% else%>
+        <%= image_tag "default.png", class:"prof_default"%>
+      <% end%>      
+    </div>
+    
+    <div class="b">
+      <p class="name"><%= current_user.name%></p>
+      <p><%= render 'shared/stats' %></p>
+    </div>
+    
+      
+      
+    
+    <div class="b">
+      <%= link_to "ホーム", "/static_pages/mypage", class:"home btn--white btn--radius"%>
+    </div>
+  
+    <div class="b">
+      <%= link_to "設定", edit_user_path(current_user), method: :get, class:"home btn--white btn--radius"%>
+    </div>
+
+    
+    <div class="b">
+      <%= link_to "ログアウト", logout_path, method: :delete , class:"home btn--white btn--radius"%>
+    </div>
+    
+    <div class="b">
+      <%= link_to "新規投稿", restaurants_home_path , class:"home btn--orange btn--radius"%>
+    </div>
+    
+  </div>
+    
+    
+    
+    
+  <div class="col-md-7">
+    <% if current_user.microposts.any? %>
+      <h3><%= current_user.microposts.count %>件の投稿</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+  
+  <div class="col-md-2 right-sidebar sticky">
+    <div class="b">
+      <%= link_to "ユーザー検索", new_search_path, class:"home btn--white btn--radius" %>
+    </div>
+  </div>
+
+</div>

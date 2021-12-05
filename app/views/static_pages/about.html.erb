@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application',
+                               'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+  </head>
+  
+  <!--application.html.erbは反映されないようにコントローラーで設定-->
+  <body>
+    <div class="container intro">
+      <h1> このアプリケーションについて </h1>
+      
+      <div class="col-md-6">
+        <%= image_tag 'intro2.png', class:"intro1"%>
+        <div class="content2">
+          
+          <h2>自分用の飲食店の記録に</h2>
+            <p>
+              「今日のご飯どこへ行こう」 </br>
+              「いろいろ飲食店は知っているけど、なかなか決まらない」</br>
+              このような経験はありませんか？</br>
+            </p>
+            <p>
+              このアプリケーションでは飲食店のレビューや写真、</br>
+              満足度を記録することができます。
+            </p>
+            <p>
+              今までに行った飲食店の思い出の記録し、
+              再び振り返る際に便利なアプリケーションです。
+            </p>
+        </div>
+            <div class="b">
+              <%= link_to "ログイン", login_path, class:"home2 btn--white btn--radius"%>
+            </div>
+            
+            <div class="b">
+              <%= link_to "新規登録", signup_path, class:"home2 btn--white btn--radius"%>
+            </div>
+            <div class="b">
+              <%= link_to "ホーム画面へ",   '/' , class:"home2 btn--white btn--radius"%>
+            </div>
+  
+      </div>
+      
+      <div class="col-md-6">
+        <div class="content">
+
+
+          <h2>友人との飲食店の共有に</h2>
+          <p>
+            今まで行ったことのない新しいお店に行ってみたい。
+          </p>
+          <p>
+            不特定多数の口コミ共有アプリケーションでは、</br>
+            ・投稿者がどんなひとなのかわからない</br>
+            ・情報が多すぎてどれを参考にするべきかわからない</br>
+            しかし、友人からの口コミなら安心できる
+          </p>
+          <p>
+            このような想いからこのアプリケーションを開発しました。
+          </p>
+          <p>
+            友人と一緒に素敵な飲食店を共有してみてください。
+          </p>
+            
+        </div>
+        <%= image_tag 'intro2.png', class:"intro2"%>
+      </div>
+    </div>
+    
+    <div class="under">
+
+    </div>
+    
+  </body>
+</html>

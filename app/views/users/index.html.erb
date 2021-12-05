@@ -1,0 +1,24 @@
+<% provide(:title, 'All users') %>
+
+<div class="row">
+  <div class="col-md-3 sidebar sticky">
+    <div class="b">
+      <%= link_to "戻る", new_search_path, class:"home btn--white btn--radius" %>
+      <%= link_to "ホーム", '/static_pages/mypage', class:"home btn--white btn--radius" %>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <h2>全ユーザー</h2>
+    <%= will_paginate %>
+      <ul class="users">
+        <% @users.each do |user| %>
+          <%= render user %>
+        <% end %>
+      </ul>
+    
+    <%= will_paginate %>
+  </div>
+  <div class="col-md-2 right-sidebar sticky">
+  </div>
+  
+</div>

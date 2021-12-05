@@ -1,0 +1,29 @@
+<% provide(:title, "search restaurants")%>
+  <div class="row">
+    <div class="col-md-3 sidebar sticky">
+      <div class="b">
+        <%= link_to "戻る" , new_search_path , class: 'home btn--white btn--radius'%>
+        <%= link_to "全ユーザー", users_path , class: 'home btn--white btn--radius'%>        
+      </div>
+    </div>
+    <div class="col-md-7">
+        
+      <h2>検索キーワード</h2>
+      <h2><%= params[:keyword]%></h2>
+      <% if @users.present? %>
+        <ul class="users">
+          <% @users.each do |user| %>
+            <%= render user %>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2>見つかりません</h2>
+      <% end %>
+
+    </div>
+    <div class="col-md-2 right-sidebar sticky">
+    </div>
+  </div>
+  
+  
+  

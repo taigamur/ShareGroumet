@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <%= render 'layouts/css'%>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <!--ヘッダーは_header.html.erbに記述-->
+
+    <div class="container">
+      
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+
+      
+      
+      <%= yield %>
+      <!--必要があればfooterを挿入-->
+      <!--開発環境のみデバックを挿入-->
+      <!--<%= debug(params) if Rails.env.development? %>-->
+    </div>
+    
+  </body>
+</html>

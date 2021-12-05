@@ -1,0 +1,52 @@
+<% provide(:title, @title) %>
+<div class="row">
+  
+
+  
+  <div class="col-md-3 sidebar sticky">
+    
+    <div class="prof_margin">
+      <% if current_user.image.attached? %>
+        <%= image_tag current_user.image, class:"prof_image"%>
+      <% else%>
+        <%= image_tag "default.png", class:"prof_default"%>
+      <% end%>      
+    </div>
+    
+    <div class="b">
+      <p class="name"><%= current_user.name%></p>
+      <p><%= render 'shared/stats' %></p>
+    </div>
+
+    <div class="b">
+      <%= link_to "ホーム", "/static_pages/mypage", class:"home btn--white btn--radius"%>
+    </div>
+  
+    <div class="b">
+      <%= link_to "プロフィール", "/static_pages/profile", class:"home btn--white btn--radius"%>
+    </div>
+
+    <div class="b">
+      <%= link_to "新規投稿", restaurants_home_path , class:"home btn--orange btn--radius"%>
+    </div>
+  </div>
+  
+  
+  <div class="col-md-7">
+    <h2><%= @title %></h2>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <!--各ユーザーを表示するパーシャル　_user.html.erb -->
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+  
+  <div class="col-md-2 right-sidebar sticky">
+    <div class="b">
+
+    </div>
+  </div>
+  
+</div>

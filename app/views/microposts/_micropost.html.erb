@@ -1,0 +1,52 @@
+<!--1つのマイクロポストを表示するマーシャル-->
+
+<li id="micropost-<%=micropost.id%>">
+  
+  <% if micropost.user.image.attached? %>
+    <%= image_tag micropost.user.image, class:"prof_image_list"%>
+  <% else%>
+    <%= image_tag "default.png", class:"prof_default_list"%>
+  <% end%>   
+  
+
+    <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+    <span class="title"><%= micropost.title %></span>
+    <span class="address"><%= micropost.address %></span>
+
+  <!--左余白の問題あり-->
+  <div class="rate-space ">
+  <% if micropost.point == 1 %>
+  <span class="rate rate1"></span>
+  <% end %>
+  <% if micropost.point == 2%>
+  <span class="rate rate2"></span>
+  <% end %>
+  <% if micropost.point == 3%>
+  <span class="rate rate3"></span>
+  <% end %>
+  <% if micropost.point == 4%>
+  <span class="rate rate4"></span>
+  <% end %>
+  <% if micropost.point == 5%>
+  <span class="rate rate5"></span>
+  <% end %>
+  </div>
+  
+  <span class="content">
+    <%= image_tag micropost.display_image if micropost.image.attached? %>
+    <%= micropost.content %>
+  </span>
+  
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+  </span>
+  
+  <% if current_user?(micropost.user) %>
+    <%= link_to "delete", micropost, method: :delete,
+                    data: { confirm: "You sure?" },class: "delete" %>
+  <% end %>
+  
+</li>
+
+<!--title , point のCSSは独自で考える-->
+

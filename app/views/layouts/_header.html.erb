@@ -1,0 +1,32 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Share Gourmet", '#', id: "logo" %>
+    <nav>
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <!--ボタンダウン等のレイアウトを作成するべき-->
+          <li><%= link_to "Home", '/static_pages/mypage' %></li>
+          <li><%= link_to "Mypage", '/static_pages/profile' %></li>
+          
+<%
+=begin
+%>
+          <li><%= link_to "Favorite", '#' %></li>
+          <li><%= link_to "Search", '#' %></li>
+          <li><%= link_to "Log out",logout_path, method: :delete%></li>
+<%
+=end
+%>
+          
+          <li><%= link_to "Users", users_path %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+      
+      
+    </nav>
+  </div>
+</header>
