@@ -53,4 +53,3 @@ yarn-debug.log*
 
 tmp/*
 log/*
-nginx_docker
