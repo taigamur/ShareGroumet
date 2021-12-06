@@ -24,8 +24,8 @@ ADD Gemfile.lock /myapp/Gemfile.lock
 
 # bundle installの実行
 RUN gem install bundler
-RUN bundle update
 RUN bundle install
+RUN bundle update
 
 # ホストのアプリケーションディレクトリ内をすべてコンテナにコピー
 ADD . /myapp

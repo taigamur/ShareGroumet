@@ -24,10 +24,6 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
 config/initializers/secret_token.rb
 .env.*
 /.bundle
