@@ -173,8 +173,16 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     ruby_dep (1.5.0)
-    sassc (2.4.0)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.1.0-x86_64-linux)
       ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -189,6 +197,7 @@ GEM
     sqlite3 (1.4.1)
     thor (1.1.0)
     thread_safe (0.3.6)
+    tilt (2.0.10)
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -230,6 +239,8 @@ DEPENDENCIES
   mysql2
   puma (= 4.3.6)
   rails (= 6.0.3)
+  sass-rails (= 6)
+  sassc (= 2.1.0)
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.4.1)
@@ -239,4 +250,4 @@ DEPENDENCIES
   will_paginate (= 3.1.8)
 
 BUNDLED WITH
-   2.2.32
+   2.2.33
