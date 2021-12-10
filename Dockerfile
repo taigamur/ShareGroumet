@@ -29,8 +29,6 @@ RUN bundle install
 
 # ホストのアプリケーションディレクトリ内をすべてコンテナにコピー
 ADD . /myapp
-RUN yarn install --check-files
-RUN bundle exec rails assets:precompile
 
 # puma.sockを配置するディレクトリを作成
 RUN mkdir -p tmp/sockets
