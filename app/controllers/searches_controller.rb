@@ -10,5 +10,4 @@ class SearchesController < ApplicationController
       @users = User.none
     end
   end
-  
 end
