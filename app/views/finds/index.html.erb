@@ -5,7 +5,7 @@
       <h2>検索キーワード</h2>
       <h2><%= params[:name]%></h2>
       
-      <%= link_to "再度検索" , restaurants_home_path , class: 'back_button btn btn-default'%>
+      <%= link_to "再度検索" , new_find_path , class: 'back_button btn btn-default'%>
       
       <% if @api_params['ResultInfo']['Count'] == 0%>
         <p>検索結果がありません</p>

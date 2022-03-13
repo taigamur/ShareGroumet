@@ -7,14 +7,10 @@ Rails.application.routes.draw do
   get 'static_pages/profile'
   get 'static_pages/sample'
   get '/signup', to:'users#new'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  get '/login',   to: 'sessions#new'
+  post '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
   get '/sample', to: 'static_pages#sample'
-  
-  # 飲食店を検索するためのroute
-  get '/restaurants/home'
-  get '/restaurants/list', to:'restaurants#list'
   
   resources :users do
     member do
@@ -25,4 +21,5 @@ Rails.application.routes.draw do
   resources :microposts, only: [:create, :destroy, :new]
   resources :relationships,   only: [:create, :destroy]
   resources :searches, only: [:new, :index]
+  resources :finds, only: [:new, :index]
 end

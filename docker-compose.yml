@@ -8,14 +8,14 @@ services:
     command: bundle exec puma -C config/puma.rb -e production
     # command: bundle exec puma -C config/puma.rb
     # ========================
-    volumes:
-      - .:/myapp
-      - public-data:/myapp/public
-      - tmp-data:/myapp/tmp
-      - log-data:/myapp/log
-    networks:
-      - myapp-network
-  # ローカルの場合はコメントアウトを解除
+  #   volumes:
+  #     - .:/myapp
+  #     - public-data:/myapp/public
+  #     - tmp-data:/myapp/tmp
+  #     - log-data:/myapp/log
+  #   networks:
+  #     - myapp-network
+  # # ローカルの場合はコメントアウトを解除
   #   depends_on:
   #     - db
 
