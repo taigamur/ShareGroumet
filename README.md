@@ -12,6 +12,6 @@
 フレームワーク Ruby on Rails 6  
 Appサーバー Puma  
 Webサーバー　Nginx  
-DB MySQL 5  
-インフラ AWS  
+DB MySQL
+本番環境 AWS EC2
 飲食店検索機能  [Yahoo!ローカルサーチAPI](https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/localsearch.html)
