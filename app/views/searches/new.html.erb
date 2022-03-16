@@ -3,21 +3,20 @@
     <div class="col-md-3 sidebar sticky">
       <div class="b">
         <%= link_to "戻る" , static_pages_mypage_path , class: 'home btn--white btn--radius'%>
-        <%= link_to "全ユーザー", users_path , class: 'home btn--white btn--radius'%>        
+         
       </div>
     </div>
     <div class="col-md-7">
       <h2>ユーザーを検索</h2>
-    
-
+  
       <%= form_with url: searches_path, method: :get, local: true do |f| %>
-      <div class="form-group form_size">
-      <%= f.label :keyword,"keyword" %>
-      <%= f.text_field :keyword,class:'form-control'%>
-      <%= f.submit "検索",  class: 'btn btn-primary' %>
-      </div>
-      
+        <div class="form-group form_size">
+          <%= f.label :keyword,"keyword" %>
+          <%= f.text_field :keyword,class:'form-control'%>
+          <%= f.submit "検索",  class: 'btn btn-primary' %>
+        </div>
       <% end %>
+      <%= link_to "Developer's Account (taigamur)" ,  user_path(id: 1), class:"btn btn-outline-secondary user_searches_link" %>
   </div>
   <div class="col-md-2 right-sidebar sticky">
   </div>
