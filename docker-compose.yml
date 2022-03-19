@@ -15,7 +15,7 @@ services:
       - log-data:/myapp/log
     networks:
       - myapp-network
-  # # ローカルの場合はコメントアウトを解除
+  # ローカルの場合はコメントアウトを解除
   #   depends_on:
   #     - db
 
