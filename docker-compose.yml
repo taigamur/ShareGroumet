@@ -5,8 +5,8 @@ services:
     build:
       context: .
     # ローカルと本番の切り替え 
-    # command: bundle exec puma -C config/puma.rb -e production
-    command: bundle exec puma -C config/puma.rb
+    command: bundle exec puma -C config/puma.rb -e production
+    # command: bundle exec puma -C config/puma.rb
     # ========================
     volumes:
       - .:/myapp
@@ -16,20 +16,20 @@ services:
     networks:
       - myapp-network
   # ローカルの場合はコメントアウトを解除
-    depends_on:
-      - db
+  #   depends_on:
+  #     - db
 
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: myapp_development
-    volumes:
-      - db-data:/var/lib/mysql
-    networks:
-      - myapp-network
+  # db:
+  #   image: mysql:5.7
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_USER: user
+  #     MYSQL_PASSWORD: password
+  #     MYSQL_DATABASE: myapp_development
+  #   volumes:
+  #     - db-data:/var/lib/mysql
+  #   networks:
+  #     - myapp-network
   # ================================= 
 
   web:
