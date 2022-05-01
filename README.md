@@ -8,6 +8,8 @@
 
 ![pic1](picture/pic_readme_1.png)
 
+---
+
 ![pic2](picture/pic_readme_2.png)
 
 
